@@ -1,0 +1,56 @@
+{
+  "name": "phaser-plugin-water-body",
+  "version": "1.0.0",
+  "description": "A water body physics plugin for Phaser v3",
+  "main": "dist.js",
+  "files": [
+    "dist.js"
+  ],
+  "scripts": {
+    "build": "BABEL_ENV=build rollup -c",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamchristopher/phaser-plugin-water-body.git"
+  },
+  "keywords": [
+    "phaser",
+    "physics",
+    "water"
+  ],
+  "author": "iamchristopher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamchristopher/phaser-plugin-water-body/issues"
+  },
+  "homepage": "https://github.com/iamchristopher/phaser-plugin-water-body#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "phaser": "^3.16.2",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-replace": "^2.1.0"
+  },
+  "babel": {
+    "env": {
+      "build": {
+        "plugins": [
+          "@babel/plugin-proposal-class-properties"
+        ],
+        "presets": [
+          "@babel/preset-env"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "phaser-matter-collision-plugin": "^0.10.1"
+  }
+}
