@@ -49,8 +49,5 @@
         ]
       }
     }
-  },
-  "dependencies": {
-    "phaser-matter-collision-plugin": "^0.10.1"
   }
 }
