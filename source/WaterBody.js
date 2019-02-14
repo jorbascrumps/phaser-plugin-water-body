@@ -75,7 +75,8 @@ export default class WaterBody {
             this.depth,
             {
                 isSensor: true,
-                isStatic: true
+                isStatic: true,
+                gameObject: this,
             }
         );
 
