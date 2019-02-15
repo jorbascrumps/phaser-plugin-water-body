@@ -28,7 +28,7 @@ The plugin registers a new custom `Game Object` that is available from within yo
 ```javascript
 const waterBody = this.add.water(0, 0, 600, 600, 350, {
     texture: 'water',
-};
+});
 ```
 
 ## API
