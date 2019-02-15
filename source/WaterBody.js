@@ -26,13 +26,13 @@ export default class WaterBody {
         this.tension = tension;
         this.dampening = dampening;
         this.spread = spread;
-        this.depth = depth;
+        this.depth = Math.min(depth, this.h);
 
         const coords = [
             0,
-            this.h - depth,
+            this.h - this.depth,
             this.w,
-            this.h - depth
+            this.h - this.depth
         ];
         const surface = new Phaser.Geom.Line(...coords);
         const points = surface.getPoints(0, 20);
