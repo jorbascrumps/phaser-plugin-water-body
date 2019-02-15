@@ -4,12 +4,12 @@ export default class WaterBody {
 
     constructor (
         context,
+        x = 0,
+        y = 0,
+        w = 100,
+        h = 100,
+        depth = 150,
         {
-            h = 100,
-            w = 100,
-            x = 0,
-            y = 0,
-            depth = 150,
             tension = 0.025,
             dampening = 0.025,
             spread = 0.25,

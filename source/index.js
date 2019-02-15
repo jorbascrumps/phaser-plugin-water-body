@@ -10,8 +10,8 @@ export default class WaterBodyPlugin extends Phaser.Plugins.ScenePlugin {
         pluginManager.registerGameObject('water', this.createWaterBody);
     }
 
-    createWaterBody = (config) => {
-        const body = new WaterBody(this.scene, config);
+    createWaterBody = (x, y, width, height, depth, config) => {
+        const body = new WaterBody(this.scene, x, y, width, height, depth, config);
 
         this.#bodies.push(body);
 
