@@ -1,5 +1,5 @@
 # Phaser Water Body Plugin
-_Demo coming soon_
+[View demo](https://jorbascrumps.github.io/phaser-plugin-water-body/)
 
 ## Installation
 ```
