@@ -10,6 +10,11 @@ export default {
             file: 'dist.js',
             format: 'cjs',
         },
+        {
+            file: 'docs/phaser-plugin-water-body.js',
+            format: 'iife',
+            name: 'WaterBodyPlugin',
+        },
     ],
     plugins: [
         babel({
