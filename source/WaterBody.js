@@ -27,6 +27,7 @@ export default class WaterBody {
         this.dampening = dampening;
         this.spread = spread;
         this.depth = Math.min(depth, this.h);
+        this.texture = texture;
 
         const coords = [
             0,
@@ -60,7 +61,7 @@ export default class WaterBody {
 
 
         if (typeof texture === 'string') {
-            this.background = context.add.tileSprite(this.x, this.y, this.w, this.h, 'water')
+            this.background = context.add.tileSprite(this.x, this.y, this.w, this.h, this.texture)
                 .setAlpha(0.75)
                 .setDepth(99)
                 .setOrigin(0, 0);
