@@ -88,8 +88,8 @@ export default class WaterBody {
         });
 
         this.emitter = context.add.particles('droplet').createEmitter({
-            alpha: 0.5,
-            tint: 0x08bde1,
+            alpha: 1,
+            tint: 0x0b5095,
             speed: { min: 100, max: 500 },
             gravityY: 1000,
             lifespan: 4000,
@@ -114,11 +114,7 @@ export default class WaterBody {
         });
     }
 
-    preUpdate () {
-        console.log('???')
-    }
-
-    update (t) {
+    update () {
         this.columns.forEach(column =>
             column.update(this.dampening, this.tension)
         );
@@ -175,8 +171,7 @@ export default class WaterBody {
         }
     }
 
-    splash (index, speed) {
-        const numDroplets = Math.floor(speed / 10);
+    splash (index, speed = 1, numDroplets = 3) {
         let column = this.columns[index];
         column.speed = speed;
 
