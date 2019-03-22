@@ -24,7 +24,7 @@ function create () {
 }
 
 function preload () {
-    this.load.image('ball', 'http://labs.phaser.io/assets/sprites/block.png');
+    this.load.image('ball', 'https://labs.phaser.io/assets/sprites/block.png');
     this.load.image('droplet', 'droplet.png');
     this.load.image('water', 'water.jpg');
 }
