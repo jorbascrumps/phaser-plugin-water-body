@@ -173,11 +173,6 @@ export default class WaterBody {
                 }
             }
         }
-
-        if (typeof this.background !== 'undefined') {
-            this.background.tilePositionX += .1;
-            this.background.tilePositionY += .05;
-        }
     }
 
     splash (index, speed) {
