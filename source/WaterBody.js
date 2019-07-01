@@ -112,6 +112,8 @@ export default class WaterBody {
                 this.ripple(Phaser.Math.Clamp(i, 0, this.columns.length - 1), 10);
             }
         });
+
+        context.sys.events.on('update', this.update, this);
     }
 
     update () {

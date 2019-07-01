@@ -1,35 +1,15 @@
 import WaterBody from './WaterBody';
 
-export default class WaterBodyPlugin extends Phaser.Plugins.ScenePlugin {
+export default class WaterBodyPlugin extends Phaser.Plugins.BasePlugin {
 
-    #bodies = []
-
-    constructor (scene, pluginManager) {
-        super(scene, pluginManager);
+    constructor (pluginManager) {
+        super(pluginManager);
 
         pluginManager.registerGameObject('water', this.createWaterBody);
     }
 
-    createWaterBody = (x, y, width, height, depth, config) => {
-        const body = new WaterBody(this.scene, x, y, width, height, depth, config);
-
-        this.#bodies.push(body);
-
-        return body;
-    }
-
-    boot () {
-        this.systems.events.on('update', this.update, this);
-    }
-
-    update() {
-        for (const body of this.#bodies) {
-            body.update();
-        }
-    }
-
-    get bodies () {
-        return this.#bodies;
+    createWaterBody (x, y, width, height, depth, config) {
+        return new WaterBody(this.scene, x, y, width, height, depth, config);
     }
 
 }
