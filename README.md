@@ -32,16 +32,15 @@ const waterBody = this.add.water(0, 0, 600, 600, 350, {
 
 ## API
 
-### WaterBody(x, y, width, height, depth, options)
+### `WaterBody(x, y, width, height, depth, options)`
 #### Arguments
-Argument | Type | Default | Description
---- | --- | --- | ---
-**x** | Number | 0 | The x position to render the body
-**y** | Number | 0 | The y position to render the body
-**width** | Number | 100 | The width to render the body
-**height** | Number | 100 | The height to render the body
-**depth** | Number | 100 | The depth of water in the body (Note: cannot be larger than the height)
-**options.texture** | String | undefined | The texture key to use as the surface image (Note: currently required)
+* **x** (Number) &mdash; The x position to render the body. Default value is `0`.
+* **y** (Number) &mdash; The y position to render the body. Default value is `0`.
+* **width** (Number) &mdash; The width to render the bodyy. Default value is `100`.
+* **height** (Number) &mdash; The height to render the bodyy. Default value is `100`.
+* **depth** (Number) &mdash; The depth of water in the body (Note: cannot be larger than the height). Default value is `100`.
+* **options** (Object) &mdash; An object containing the following optional properties:
+  * **texture** (String) &mdash; The texture key to use as the surface image **(Note: currently required)**
 
 **Returns** a `WaterBody` object.
 
