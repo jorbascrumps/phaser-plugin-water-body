@@ -16,6 +16,10 @@ export default class WaterBody {
             texture,
         } = {}
     ) {
+        if (typeof texture === 'undefined') {
+            throw new Error('This version of WaterBody requires explicitly setting a texture');
+        }
+
         this.debug = false;
 
         this.x = x;
