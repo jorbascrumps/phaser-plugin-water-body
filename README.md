@@ -11,10 +11,9 @@ import WaterBodyPlugin from 'phaser-plugin-water-body';
 
 new Phaser.Game({
     plugins: [
-        scene: [
+        global: [
             {
                 key: 'WaterBodyPlugin',
-                mapping: 'waterplugin',
                 plugin: WaterBodyPlugin,
                 start: true,
             }
