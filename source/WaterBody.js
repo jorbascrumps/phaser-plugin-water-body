@@ -10,9 +10,10 @@ export default class WaterBody {
         h = 100,
         depth = 150,
         {
-            tension = 0.025,
             dampening = 0.025,
+            renderDepth = 1,
             spread = 0.25,
+            tension = 0.025,
             texture,
         } = {}
     ) {
@@ -63,11 +64,10 @@ export default class WaterBody {
             .setDepth(99)
             .setOrigin(0, 0);
 
-
         if (typeof texture === 'string') {
             this.background = context.add.tileSprite(this.x, this.y, this.w, this.h, this.texture)
                 .setAlpha(0.75)
-                .setDepth(99)
+                .setDepth(renderDepth)
                 .setOrigin(0, 0);
 
             this.background.mask = new Phaser.Display.Masks.GeometryMask(context, this.body);
