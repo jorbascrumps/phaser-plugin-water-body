@@ -51,3 +51,4 @@ _Create a new WaterBody object in the Scene._
 - [ ] Fallback surface colour if texture is not provided
 - [ ] Resize after creation
 - [ ] Dynamic runtime depth
+- [ ] Support for floating objects
