@@ -48,6 +48,7 @@ Argument | Type | Default | Description
 
 ## TODO
 - [ ] Additional documentation
-- [ ] Demo
+- [x] Demo
 - [ ] Fallback surface colour if texture is not provided
 - [ ] Resize after creation
+- [ ] Dynamic runtime depth
