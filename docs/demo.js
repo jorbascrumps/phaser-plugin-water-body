@@ -5,11 +5,11 @@ function preload () {
 }
 
 function create () {
-    const bodies = this.add.group([
-        this.add.water(0, 0, 800, 800, 400, {
-            texture: 'water',
-        })
-    ]);
+    const body = this.add.water(0, 0, 800, 800, 400, {
+        dampening: .0001,
+        tension: 0.01,
+        texture: 'water',
+    });
 
     this.input.on('pointerdown', ({ worldX, worldY }) => {
         this.matter.add
@@ -18,13 +18,11 @@ function create () {
     });
 
     this.collision.addOnCollideStart({
-        objectA: bodies
-            .getChildren()
-            .map(({ sensor }) => sensor),
+        objectA: body.sensor,
         callback: ({ gameObjectA: waterBody, gameObjectB, }) => {
-            const i = waterBody.columns.findIndex((col, i) => waterBody.x + col.x >= gameObjectB.x && i);
+            const i = waterBody.columns.findIndex((col, i) => col.x >= gameObjectB.x && i);
             const speed = gameObjectB.body.speed * 3;
-            const numDroplets = Math.ceil(gameObjectB.body.speed);
+            const numDroplets = Math.ceil(gameObjectB.body.speed) * 5;
 
             gameObjectB.setFrictionAir(0.25);
             waterBody.splash(Phaser.Math.Clamp(i, 0, waterBody.columns.length - 1), speed, numDroplets);
