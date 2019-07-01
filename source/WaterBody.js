@@ -91,30 +91,38 @@ export default class WaterBody {
             }
         });
 
+        const emitterDeathZone = new Phaser.Geom.Polygon(
+            Object.values(this.body.geom.points)
+                .map(({ x, y }) => ([
+                    this.x + x,
+                    this.y + y
+                ]))
+        );
         this.emitter = context.add.particles('droplet').createEmitter({
             alpha: 1,
             tint: 0x0b5095,
-            speed: { min: 100, max: 500 },
+            speed: {
+                min: 100,
+                max: 500,
+            },
             gravityY: 1000,
             lifespan: 4000,
             quantity: 0,
             frequency: 1000,
-            angle: { min: 240, max: 300 },
-            scale: { min: .5, max: .1 },
+            angle: {
+                min: 240,
+                max: 300,
+            },
+            scale: {
+                min: .5,
+                max: .1,
+            },
             deathZone: {
                 type: 'onEnter',
-                source: new Phaser.Geom.Polygon(
-                    Object.values(this.body.geom.points)
-                        .map(({ x, y }) => ([
-                            this.x + x,
-                            this.y + y
-                        ]))
-                )
+                source: emitterDeathZone,
             },
-            deathCallback: ({ x }) => {
-                const i = this.columns.findIndex((col, i) => this.x + col.x >= x && i);
-                this.ripple(Phaser.Math.Clamp(i, 0, this.columns.length - 1), 10);
-            }
+            deathCallbackScope: this,
+            deathCallback: this.onDropletDeath,
         });
 
         context.sys.events.on('update', this.update, this);
@@ -198,6 +206,17 @@ export default class WaterBody {
         this.debug = bool;
 
         return this;
+    }
+
+    onDropletDeath ({ x, }) {
+        const minColumn = 0;
+        const maxColumn = this.columns.length - 1;
+        const targetColumn = this.columns.findIndex((col, i) => this.x + col.x >= x && i);
+        const column = Phaser.Math.Clamp(targetColumn, minColumn, maxColumn);
+
+        const speed = 0.5; // TODO: Calculate dynamic speed
+
+        this.ripple(column, speed);
     }
 
 }
