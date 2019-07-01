@@ -33,6 +33,7 @@ const waterBody = this.add.water(0, 0, 600, 600, 350, {
 ## API
 
 ### `WaterBody(x, y, width, height, depth, options)`
+_Create a new WaterBody object in the Scene._
 #### Arguments
 * **x** (Number) &mdash; The x position to render the body. Default value is `0`.
 * **y** (Number) &mdash; The y position to render the body. Default value is `0`.
