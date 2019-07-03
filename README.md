@@ -26,7 +26,7 @@ new Phaser.Game({
 The plugin registers a new custom `Game Object` that is available from within your scenes:
 ```javascript
 const waterBody = this.add.water(0, 0, 600, 600, 350, {
-    texture: 'water',
+    texture: 'water', // Currently required..
 });
 ```
 
