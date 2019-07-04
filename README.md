@@ -54,6 +54,7 @@ this.collision.addOnCollideStart({
     },
 });
 ```
+Check out the [demo](https://github.com/jorbascrumps/phaser-plugin-water-body/blob/master/docs/demo.js) for a full example.
 
 ## API
 
