@@ -31,7 +31,7 @@ const waterBody = this.add.water(0, 0, 600, 600, 350, {
 ```
 This will render a body of water, but it will not allow it to interact with your world. There is no feasible way to create an out of the box solution for all games so it is up to you to configure this to your needs.
 
-You will need to setup collisions for any possible object you'd like to interact with. You are also responsible for determining where an impact has occurred as well as how large of an impact it was. I recommend using the excellent [phaser-matter-collision-plugin](https://www.npmjs.com/package/phaser-matter-collision-plugin) but ultimately it is up to you.
+You will need to setup collisions for any possible object you'd like to interact with. You are also responsible for determining where an impact has occurred as well as how large of an impact it was. I recommend using the excellent [phaser-matter-collision-plugin](https://github.com/mikewesthad/phaser-matter-collision-plugin) but ultimately it is up to you.
 ```js
 this.collision.addOnCollideStart({
     objectA: waterBody.sensor,
