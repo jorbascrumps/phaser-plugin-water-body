@@ -21,9 +21,7 @@ export default {
             exclude: 'node_modules/**'
         }),
         resolve({
-            jsnext: true,
-            main: true,
-            browser: true
+            browser: true,
         }),
         commonjs(),
         minify({
